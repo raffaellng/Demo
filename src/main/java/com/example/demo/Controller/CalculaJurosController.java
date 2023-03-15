@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/calculate-interest")
+@RequestMapping("/calcula-juros")
 public class CalculaJurosController {
 
     private final ICalculaJuros _calculaJuros;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<CalculaJurosDto> getCalculateInterest(@RequestParam(name = "Valor Inicial") double valorInicial, @RequestParam(name = "Mes") int mes){
+    public ResponseEntity<CalculaJurosDto> getCalculaJuros(@RequestParam(name = "Valor Inicial") double valorInicial, @RequestParam(name = "Mes") int mes){
         double taxaJurosWebService = 0.01;
         CalculaJurosDto result = _calculaJuros.CalculaJuros(valorInicial,mes,taxaJurosWebService);
         return ResponseEntity.ok(result);
