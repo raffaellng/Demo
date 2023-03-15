@@ -17,7 +17,7 @@ public class CalculaJurosController {
 
     private final ICalculaJuros _calculaJuros;
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<CalculaJurosDto> getCalculateInterest(@RequestParam(name = "Valor Inicial") double valorInicial, @RequestParam(name = "Mes") int mes){
         double taxaJurosWebService = 0.01;
         CalculaJurosDto result = _calculaJuros.CalculaJuros(valorInicial,mes,taxaJurosWebService);
