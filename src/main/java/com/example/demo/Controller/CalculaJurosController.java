@@ -1,7 +1,7 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Service.Interface.ICalculateInterest;
-import com.example.demo.Dto.CalculateInterestDto;
+import com.example.demo.Service.Interface.ICalculaJuros;
+import com.example.demo.Dto.CalculaJurosDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/calculate-interest")
-public class CalculateInterestController {
+public class CalculaJurosController {
 
-    private final ICalculateInterest calculateInterestServices;
+    private final ICalculaJuros _calculaJuros;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<CalculateInterestDto> getCalculateInterest(@RequestParam(name = "Valor Inicial") double initialValue, @RequestParam(name = "Mes") int month){
-        double interestRateService = 0.01;
-        CalculateInterestDto result = calculateInterestServices.calculateInterest(initialValue,month,interestRateService);
+    public ResponseEntity<CalculaJurosDto> getCalculateInterest(@RequestParam(name = "Valor Inicial") double valorInicial, @RequestParam(name = "Mes") int mes){
+        double taxaJurosWebService = 0.01;
+        CalculaJurosDto result = _calculaJuros.CalculaJuros(valorInicial,mes,taxaJurosWebService);
         return ResponseEntity.ok(result);
     }
 }

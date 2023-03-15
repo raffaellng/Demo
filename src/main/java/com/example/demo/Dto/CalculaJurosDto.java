@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CalculateInterestDto {
+public class CalculaJurosDto {
     @JsonProperty("Juros calculado")
-    private double calculatedInterest;
+    private double jurosCalculado;
 }
