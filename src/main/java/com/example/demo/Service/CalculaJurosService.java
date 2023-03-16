@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculaJurosService implements ICalculaJuros {
     @Override
-    public CalculaJurosDto CalculaJuros(double valorInicial, double mes, Double taxa) {
+    public CalculaJurosDto calculaJuros(double valorInicial, double mes, Double taxa) {
         CalculaJurosDto calculaJurosDto = new CalculaJurosDto();
 
         if (taxa == null)

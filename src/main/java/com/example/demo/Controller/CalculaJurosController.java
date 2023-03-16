@@ -22,7 +22,7 @@ public class CalculaJurosController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<CalculaJurosDto> getCalculaJuros(@RequestParam(name = "Valor Inicial") double valorInicial, @RequestParam(name = "Mes") int mes){
         double taxaJurosWebService = _taxaJurosWS.TaxaJurosWebService();
-        CalculaJurosDto result = _calculaJuros.CalculaJuros(valorInicial,mes,taxaJurosWebService);
+        CalculaJurosDto result = _calculaJuros.calculaJuros(valorInicial,mes,taxaJurosWebService);
         return ResponseEntity.ok(result);
     }
 }
