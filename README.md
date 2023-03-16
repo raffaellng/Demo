@@ -7,7 +7,6 @@
 # Tecnologias usada
 - springBoot
 - Lombok
-- Flyway
 - Java 17
 - hibernate
 - Swagger
